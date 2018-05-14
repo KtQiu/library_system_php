@@ -1,0 +1,69 @@
+ <?php
+
+class  link{
+    // private    $servername = "localhost";
+    // private    $username = "root";
+    // private    $password = "Ucber4ever";
+    // private    $dbname = "lib_db";
+	public     $conn;
+	public 	   $sql;
+    // 创建连接，初始化
+    function __construct()
+    {
+
+        $conn = new mysqli("localhost", "root", "Ucber4ever", "lib_db");
+ 		$this->conn = $conn;
+		// 检测连接
+        if ($conn->connect_error)
+        {
+            die("连接失败: " . $conn->connect_error);
+        }
+    }
+	
+	// 运行mysql语句,return的是语句的结果
+    function exec_sql($sql)
+    {
+		$this->sql = $sql;
+		$res = $this->conn->query($this->sql);
+		// $ret = mysqli_query($this->conn,$this->sql);
+		return $res;
+	}
+	
+	// // 得到 select 的结果
+	// function select_res() 
+	// {
+	// 	$result = $this->conn->query($this->sql);
+	// 	// while ($row = $result->fetch_assoc()) 
+	// 	// {
+	// 	// 	$res_array[] = $row;
+	// 	// }
+	// 	return $result;
+	// }
+	
+	// fetch result
+	// function fetch_res() 
+	// {
+	// 	$result = $this->conn->query($this->sql);
+	// 	while ($row = $result->fetch_assoc()) 
+	// 	{
+	// 		$res_array[] = $row;
+	// 	}
+	// 	return $res_array;
+	// }
+
+
+
+	// 更改sql语句
+	function set_sql($sql)
+	{
+		$this->sql = $sql;
+	}
+	
+	// 析构函数
+	function __destruct()
+	{
+		$this->conn->close();
+	}
+}
+
+?>
