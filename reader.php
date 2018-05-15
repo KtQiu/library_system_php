@@ -53,7 +53,6 @@
 
                         <br />
                         <button name="submit" type="submit" class="btn btn-primary" value="search">查询</button>
-                        <!-- <button name="submit" type="submit" class="btn btn-primary" value="return">还书</button> -->
                         <br /><br /><br />
                     </div>
                 </form>

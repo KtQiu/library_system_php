@@ -31,7 +31,7 @@ create table book(
     book_name varchar(200),
     author varchar(50),
     remain_num int(3), -- 剩余的书的数量
-    book_type char(50),
+    book_type varchar(50),
     press varchar(100),
     amount int(5),
 

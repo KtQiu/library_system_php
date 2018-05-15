@@ -61,7 +61,7 @@ setcookie("user", "", time()+3600);
                         <br />
                         <!-- <input name="submit" type="submit" class="btn"  value="登录"/> -->
                         <button name="submit" tye="submit" class="btn btn-primary" value="登录">登录</button>
-                    <!-- <input name="botton" type="submit" class="btn-large" value="登录"/> -->
+                        <button name="submit" type="submit" class="btn btn-primary" value="register">注册</button>
                     </div>
                 </form>
                 <!-- </align> -->
@@ -96,7 +96,7 @@ setcookie("user", "", time()+3600);
                                     setcookie("user", $admin_name, time()+3600);
                                     setcookie("manager_id",$admin_id,time()+3600);
                                     // alert($admin_id);
-                                    alert($_COOKIE["manager_id"]);
+                                    // alert($_COOKIE["manager_id"]);
                                     $url="http://localhost/library_system_KtQiu/manager.php";
                                     echo "<meta http-equiv='Refresh' content='0;URL=$url'>";  
                                     goto quit;
@@ -142,6 +142,13 @@ setcookie("user", "", time()+3600);
                         quit:
                         pass;
                     }
+                    if(isset($_POST['submit']) and $_POST['submit']=="register")
+                    {
+                        $url="http://localhost/library_system_KtQiu/add_card.php";
+                        echo "<meta http-equiv='Refresh' content='0;URL=$url'>";
+                        $add_card = $_POST["reader_id"];
+                    }
+                    
                 ?>
             </div>
             </div>
