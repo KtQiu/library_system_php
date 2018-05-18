@@ -3,7 +3,7 @@
 class  link{
     // private    $servername = "localhost";
     // private    $username = "root";
-    // private    $password = "Ucber4ever";
+    // private    $password = "";
     // private    $dbname = "lib_db";
 	public     $conn;
 	public 	   $sql;
@@ -11,7 +11,8 @@ class  link{
     function __construct()
     {
 
-        $conn = new mysqli("localhost", "root", "Ucber4ever", "lib_db");
+	   //根据自己的情况修改密码和名称
+        $conn = new mysqli("localhost", "root", "你的密码", "你的database的名字");
  		$this->conn = $conn;
 		// 检测连接
         if ($conn->connect_error)
